@@ -16,3 +16,5 @@ class Helt(Boble):
         Ellers dør helten.
         """
         pass
+    def tegnBoble(self, xpos,ypos,R=50):
+        canvas.create_oval(xpos-R,ypos-R,xpos+R,ypos+R,fill="#ff9944", tags="boble")

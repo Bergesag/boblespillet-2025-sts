@@ -2,6 +2,7 @@ import tkinter as tk
 import time
 from random import randint, random, uniform
 from ring import Ring
+from hjelpefunksjoner import processKeypress
 
 window = tk.Tk()
 window.lift()
@@ -114,6 +115,13 @@ teller = 0
 R_MIN = 5
 R_MAX = 20
 
+x_step = 3
+y_step = 3
+dx = 0
+dy = 0
+
+
+
 
 isRunning = True
 lastTime = time.time()
@@ -121,9 +129,11 @@ start_time = time.time()
 slette_indexer = []
 dt = 1/30
 
+window.bind("<Key>",processKeypress)
+
 while isRunning:
     if time.time() - lastTime >= dt:
-
+        
         lastTime = time.time()
     window.update()
 
