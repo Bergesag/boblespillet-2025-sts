@@ -106,6 +106,8 @@ ymax = canvas_height
 
 # Lager en referanse til canvas inni Ring-klassen.
 Ring.canvas = canvas
+ring = Ring(50, 100,100)
+ring.tegn()
 
 bobler = []
 teller = 0
