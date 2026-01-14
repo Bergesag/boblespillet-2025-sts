@@ -17,4 +17,4 @@ class Ring:
         self.x+self.R,self.y+self.R, outline=self.outline,tags=self.tag)
         
     def slett(self):
-        self.delete(self.tag)
+        self.canvas.delete(self.tag)

@@ -8,14 +8,14 @@ def processKeypress(evt):
     key = evt.keysym
     print(f'key: {key}')
     if key == "Left":
-        dx = dx
+        dx = -x_step
         dy = 0
     elif key == "Up":
         dx = 0
-        dy = -dy
+        dy = -y_step
     elif key == "Right":
-        dx= dx
+        dx= x_step
         dy = 0
     elif key == "Down":
         dx = 0
-        dy = dy
+        dy = y_step

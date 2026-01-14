@@ -104,10 +104,12 @@ xmin = 0
 xmax = canvas_width
 ymin = 0
 ymax = canvas_height
+x_helt = 100
+y_helt = 100
 
 # Lager en referanse til canvas inni Ring-klassen.
 Ring.canvas = canvas
-ring = Ring(50, 100,100)
+ring = Ring(10, x_helt, y_helt)
 ring.tegn()
 
 bobler = []
@@ -115,13 +117,14 @@ teller = 0
 R_MIN = 5
 R_MAX = 20
 
+
 x_step = 3
 y_step = 3
-dx = 0
+dx = x_step
 dy = 0
 
 
-
+canvas.update()
 
 isRunning = True
 lastTime = time.time()
@@ -133,7 +136,12 @@ window.bind("<Key>",processKeypress)
 
 while isRunning:
     if time.time() - lastTime >= dt:
+        ring.slett()
         
+        x_helt += dx
+        y_helt += dy
+        
+        ring.tegn()
         lastTime = time.time()
     window.update()
 
