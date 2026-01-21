@@ -2,6 +2,7 @@ import tkinter as tk
 import time
 from random import randint, random, uniform
 from ring import Ring
+from hindring import Hindring
 
 window = tk.Tk()
 window.lift()
