@@ -2,7 +2,7 @@ import tkinter as tk
 import time
 from random import randint, random, uniform
 from ring import Ring
-from hjelpefunksjoner import processKeypress
+#from hjelpefunksjoner import processKeypresss
 
 window = tk.Tk()
 window.lift()
@@ -98,6 +98,23 @@ avslutt.configure(
 avslutt.pack()
 
 
+def processKeypress(evt):
+    global dx, dy, x_step, y_step
+    key = evt.keysym
+    print(f'key: {key}')
+    if key == "Left":
+        dx = -3
+        dy = 0
+    elif key == "Up":
+        dx = 0
+        dy = -3
+    elif key == "Right":
+        dx = 3
+        dy = 0
+    elif key == "Down":
+        dx = 0
+        dy = 3
+
 # -------------- Spillogikk ligger under her --------------
 
 xmin = 0
@@ -118,9 +135,8 @@ R_MIN = 5
 R_MAX = 20
 
 
-x_step = 3
-y_step = 3
-dx = x_step
+
+dx = 0
 dy = 0
 
 
@@ -141,6 +157,7 @@ while isRunning:
         x_helt += dx
         y_helt += dy
         
+        ring = Ring(10, x_helt, y_helt)
         ring.tegn()
         lastTime = time.time()
     window.update()
